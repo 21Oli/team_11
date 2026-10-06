@@ -8,9 +8,8 @@ The project combines data cleaning and integration, exploratory analysis, visual
 
 ## 🚀 Live Demo
 
-**Demo:** `YOUR_STREAMLIT_DEMO_URL`
+**Demo:** `https://team11-jnfu8odfrjfdjgivcfcuag.streamlit.app/`
 
-> Replace `YOUR_STREAMLIT_DEMO_URL` with the deployed Streamlit application URL.
 
 ---
 
