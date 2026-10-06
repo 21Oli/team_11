@@ -8,7 +8,7 @@ The project combines data cleaning and integration, exploratory analysis, visual
 
 ## 🚀 Live Demo
 
-**Demo:** `https://team11-jnfu8odfrjfdjgivcfcuag.streamlit.app/`
+**Demo:** https://team11-jnfu8odfrjfdjgivcfcuag.streamlit.app/
 
 
 ---
