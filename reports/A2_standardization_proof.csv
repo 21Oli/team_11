@@ -1,0 +1,8 @@
+table,field,unique_after,allowed_set_match
+plot_train,region,"['Amhara', 'Oromia', 'SNNPR', 'Somali', 'Tigray']",True
+plot_test,region,"['Amhara', 'Oromia', 'SNNPR', 'Somali', 'Tigray']",True
+weather,region,"['Amhara', 'Oromia', 'SNNPR', 'Somali', 'Tigray']",True
+price,region,"['Amhara', 'Oromia', 'SNNPR', 'Somali', 'Tigray']",True
+plot_train,crop_type,"['barley', 'maize', 'sorghum', 'teff', 'wheat']",True
+plot_test,crop_type,"['barley', 'maize', 'sorghum', 'teff', 'wheat']",True
+price,crop_type,"['barley', 'maize', 'sorghum', 'teff', 'wheat']",True

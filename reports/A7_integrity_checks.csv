@@ -1,0 +1,15 @@
+check,status,details
+Train plot_id is unique,PASS,Unique IDs: 15090 / 15090
+Test plot_id is unique,PASS,Unique IDs: 3750 / 3750
+Train row count preserved,PASS,Original after exact-duplicate removal: 15090; master: 15090
+Test row count preserved,PASS,Original after exact-duplicate removal: 3750; master: 3750
+Train regions valid,PASS,"Regions: ['Amhara', 'Oromia', 'SNNPR', 'Somali', 'Tigray']"
+Test regions valid,PASS,"Regions: ['Amhara', 'Oromia', 'SNNPR', 'Somali', 'Tigray']"
+Train crops valid,PASS,"Crops: ['barley', 'maize', 'sorghum', 'teff', 'wheat']"
+Test crops valid,PASS,"Crops: ['barley', 'maize', 'sorghum', 'teff', 'wheat']"
+No missing model features in train,PASS,Missing cells: 0
+No missing model features in test,PASS,Missing cells: 0
+Train target is non-negative,PASS,Minimum yield: 0.1
+Price is positive,PASS,All joined price values are positive.
+Train/test feature schemas match,PASS,Test contains the same master feature columns as train excluding target.
+Weather feature exists,PASS,"Weather-derived features: ['season_mean_temp_c', 'season_rainfall_total_mm', 'season_extreme_heat_days', 'season_temp_std_c', 'season_temp_deviation_c', 'weather_months_available', 'weather_months_expected', 'weather_months_missing']"

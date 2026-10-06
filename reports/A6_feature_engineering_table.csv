@@ -1,0 +1,9 @@
+feature_name,formula,source_columns,source_table,reason
+season_mean_temp_c,mean(monthly avg_temp_c over planting month + next 3 months),regional_weather.avg_temp_c,regional_weather.csv,Captures average growing-season thermal conditions.
+season_rainfall_total_mm,sum(monthly_rainfall_mm over growing season),regional_weather.monthly_rainfall_mm,regional_weather.csv,Represents accumulated seasonal rainfall.
+season_extreme_heat_days,sum(extreme_heat_days over growing season),regional_weather.extreme_heat_days,regional_weather.csv,Captures heat stress exposure.
+season_temp_std_c,std(monthly avg_temp_c over growing season),regional_weather.avg_temp_c,regional_weather.csv,Captures temperature variability during crop development.
+season_temp_deviation_c,season_mean_temp_c - training region typical seasonal temperature,"season_mean_temp_c, region",derived from plot + weather,Measures whether the season was unusually warm/cool for the region.
+fertilizer_improved_seed_interaction,fertilizer_kg_per_ha × improved_seed_used,"fertilizer_kg_per_ha, improved_seed_used",plot survey,Captures the combined effect of fertilizer and improved seed.
+planting_month_num,calendar month number,planting_month,plot survey,Allows the model to represent planting-time effects.
+rainfall_per_fertilizer,season_rainfall_total_mm / (fertilizer_kg_per_ha + 1),"season_rainfall_total_mm, fertilizer_kg_per_ha",derived,Represents rainfall availability relative to fertilizer investment.

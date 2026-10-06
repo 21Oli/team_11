@@ -1,0 +1,28 @@
+column,type,source_file,description,derivation
+plot_id,string,crop_yield_train/test.csv,Unique plot identifier.,Original plot identifier.
+region,categorical,crop_yield_train/test.csv,Ethiopian region.,Standardized region labels.
+crop_type,categorical,crop_yield_train/test.csv,Crop type.,Standardized crop labels.
+survey_year,integer,crop_yield_train/test.csv,Survey year.,Original survey year.
+planting_month,categorical,crop_yield_train/test.csv,Crop planting month.,Standardized month label.
+altitude_m,numeric,crop_yield_train/test.csv,Elevation above sea level in meters.,Cleaned original feature.
+rainfall_mm_season,numeric,crop_yield_train/test.csv,Plot-reported seasonal rainfall.,Cleaned original feature.
+farm_size_ha,numeric,crop_yield_train/test.csv,Farm size in hectares.,Cleaned original feature.
+fertilizer_kg_per_ha,numeric,crop_yield_train/test.csv,Fertilizer applied per hectare.,Cleaned original feature.
+improved_seed_used,binary,crop_yield_train/test.csv,Whether improved seed was used.,Cleaned original feature.
+pest_disease_flag,binary,crop_yield_train/test.csv,Observed pest/disease pressure.,Cleaned original feature.
+soil_quality_index,numeric,crop_yield_train/test.csv,Soil quality index from 0 to 1.,Cleaned original feature.
+labor_days_per_ha,numeric,crop_yield_train/test.csv,Labor-days invested per hectare.,Cleaned original feature.
+distance_to_market_km,numeric,crop_yield_train/test.csv,Distance to nearest market in kilometers.,Cleaned original feature.
+season_mean_temp_c,numeric,regional_weather.csv,Mean temperature during growing season.,Mean of planting month plus following three months.
+season_rainfall_total_mm,numeric,regional_weather.csv,Total rainfall during growing season.,Sum of monthly rainfall over growing season.
+season_extreme_heat_days,numeric,regional_weather.csv,Total extreme heat days during growing season.,Sum over growing-season months.
+season_temp_std_c,numeric,regional_weather.csv,Temperature variability during growing season.,Standard deviation of monthly temperature.
+season_temp_deviation_c,numeric,regional_weather.csv + plot,Seasonal temperature deviation from the region's training baseline.,Season mean temperature minus training-region seasonal mean.
+weather_months_available,integer,regional_weather.csv,Number of weather months found in the growing-season window.,Count of matched monthly weather records.
+weather_months_expected,integer,derived,Expected growing-season months.,Fixed at four months.
+weather_months_missing,integer,derived,Missing months from the four-month growing-season window.,Expected months minus available months.
+planting_month_num,integer,plot survey,Numeric calendar representation of planting month.,Jan=1 through Dec=12.
+fertilizer_improved_seed_interaction,numeric,plot survey,Interaction between fertilizer and improved seed usage.,fertilizer_kg_per_ha × improved_seed_used.
+rainfall_per_fertilizer,numeric,derived,Seasonal rainfall relative to fertilizer investment.,season rainfall / (fertilizer + 1).
+price_birr_per_quintal,numeric,market_prices.csv,Market price in Ethiopian birr per quintal.,"Joined by region + crop + year; analysis/demo only, not a yield-model feature."
+yield_tons_per_ha,numeric target,crop_yield_train.csv,Observed crop yield in tons per hectare.,Training target; absent from test.

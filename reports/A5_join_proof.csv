@@ -1,0 +1,4 @@
+plot_id,region,survey_year,planting_month,weather_months_used,season_mean_temp_c,season_rainfall_total_mm,season_extreme_heat_days
+PLOT-000339,Oromia,2024,Aug,3,17.866666666666667,205.9,0.0
+PLOT-006092,Oromia,2024,Feb,4,19.2,294.9,0.0
+PLOT-007457,Amhara,2023,Jun,3,15.466666666666667,555.9,0.0

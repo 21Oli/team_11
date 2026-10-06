@@ -1,0 +1,7 @@
+file,columns,issue_type,rows_affected,percent_affected,fix_applied,why
+crop_yield_train.csv,"survey_year, altitude_m, rainfall_mm_season, farm_size_ha, fertilizer_kg_per_ha, improved_seed_used, pest_disease_flag, soil_quality_index, labor_days_per_ha, distance_to_market_km, yield_tons_per_ha",sentinel values (-999),788,5.222,Converted -999 to NaN before validation/imputation.,"-999 is a missing-value sentinel, not a valid measurement."
+crop_yield_train.csv + crop_yield_leaderboard_test.csv,"region, crop_type, planting_month",inconsistent categorical labels,125,0.663,Trimmed/lowercased labels and mapped known aliases to canonical labels.,"Required identical category labels across train, test, weather, and price tables."
+market_prices.csv,"region, crop_type",inconsistent categorical labels,0,0.0,Standardized region and crop labels.,Required reliable price joins.
+regional_weather.csv,"region, year, month, avg_temp_c, monthly_rainfall_mm, extreme_heat_days",duplicate rows,1,0.431,Removed exact duplicate rows.,Duplicate records can distort aggregation and model training.
+regional_weather.csv,"region, year, month",duplicate weather keys,10,4.329,Aggregated duplicate readings by mean for numeric weather variables.,The weather join requires one region/year/month record.
+regional_weather.csv,"region, month",inconsistent categorical labels,19,8.19,Standardized region and month labels.,Required reliable region/year/month weather joins.
