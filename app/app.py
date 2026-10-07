@@ -25,21 +25,17 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* ── Google Font ── */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-    /* ── Global reset ── */
     html, body, [class*="css"] {
         font-family: 'Inter', sans-serif;
     }
 
-    /* ── App background ── */
     .stApp {
         background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
         min-height: 100vh;
     }
 
-    /* ── Main content area ── */
     .main .block-container {
         padding: 2rem 2.5rem 3rem 2.5rem;
         max-width: 1300px;
@@ -50,9 +46,7 @@ st.markdown(
         background: linear-gradient(180deg, #0d1b2a 0%, #1b2a3b 100%);
         border-right: 1px solid rgba(255,255,255,0.08);
     }
-    [data-testid="stSidebar"] .block-container {
-        padding-top: 2rem;
-    }
+    [data-testid="stSidebar"] .block-container { padding-top: 2rem; }
     [data-testid="stSidebar"] label,
     [data-testid="stSidebar"] .stSelectbox label,
     [data-testid="stSidebar"] .stNumberInput label {
@@ -63,16 +57,14 @@ st.markdown(
         text-transform: uppercase;
     }
     [data-testid="stSidebar"] h2,
-    [data-testid="stSidebar"] h3 {
-        color: #ffffff !important;
-    }
+    [data-testid="stSidebar"] h3 { color: #ffffff !important; }
     [data-testid="stSidebar"] .stCaption p {
         color: #607d8b !important;
         font-size: 0.78rem;
         line-height: 1.6;
     }
 
-    /* ── HERO BANNER ── */
+    /* ── Hero ── */
     .hero-banner {
         background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
         border: 1px solid rgba(255,255,255,0.1);
@@ -83,10 +75,6 @@ st.markdown(
         display: flex;
         align-items: center;
         gap: 2rem;
-    }
-    .hero-icon {
-        font-size: 4rem;
-        line-height: 1;
     }
     .hero-title {
         font-size: 2.4rem;
@@ -110,7 +98,6 @@ st.markdown(
         line-height: 1.6;
     }
     .hero-badge {
-        display: inline-block;
         background: linear-gradient(135deg, #43e97b22, #38f9d722);
         border: 1px solid rgba(67,233,123,0.3);
         color: #43e97b;
@@ -124,33 +111,16 @@ st.markdown(
         display: inline-block;
     }
 
-    /* ── SECTION CARDS ── */
-    .section-card {
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.09);
-        border-radius: 16px;
-        padding: 1.6rem 1.8rem 1.8rem 1.8rem;
-        margin-bottom: 1.2rem;
-        backdrop-filter: blur(8px);
-        transition: border-color 0.2s;
-    }
-    .section-card:hover {
-        border-color: rgba(255,255,255,0.18);
-    }
+    /* ── Section headers ── */
     .section-header {
-        font-size: 1rem;
+        font-size: 0.78rem;
         font-weight: 600;
-        color: #ffffff;
-        letter-spacing: -0.01em;
+        color: #a8c5da;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
         margin-bottom: 1.2rem;
         padding-bottom: 0.75rem;
         border-bottom: 1px solid rgba(255,255,255,0.08);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    .section-header-icon {
-        font-size: 1.1rem;
     }
 
     /* ── Input labels ── */
@@ -178,8 +148,6 @@ st.markdown(
         border-color: rgba(67,233,123,0.5) !important;
         box-shadow: 0 0 0 3px rgba(67,233,123,0.1) !important;
     }
-
-    /* ── Selectbox dropdown ── */
     [data-testid="stSelectbox"] > div > div {
         background: rgba(13,27,42,0.95) !important;
         border: 1px solid rgba(255,255,255,0.12) !important;
@@ -188,9 +156,6 @@ st.markdown(
     }
 
     /* ── Slider ── */
-    .stSlider [data-testid="stThumbValue"] {
-        color: #43e97b !important;
-    }
     .stSlider .st-bx { background: rgba(67,233,123,0.2) !important; }
     .stSlider .st-by { background: #43e97b !important; }
 
@@ -216,8 +181,6 @@ st.markdown(
     .stButton > button[kind="primary"]:active {
         transform: translateY(0) !important;
     }
-
-    /* ── Secondary button ── */
     .stButton > button:not([kind="primary"]) {
         background: rgba(255,255,255,0.06) !important;
         color: #a8c5da !important;
@@ -249,7 +212,7 @@ st.markdown(
         letter-spacing: -0.02em;
     }
 
-    /* ── Prediction result highlight ── */
+    /* ── Result card ── */
     .result-card {
         background: linear-gradient(135deg, rgba(67,233,123,0.08) 0%, rgba(56,249,215,0.05) 100%);
         border: 1px solid rgba(67,233,123,0.25);
@@ -275,46 +238,29 @@ st.markdown(
         margin-top: 0.4rem;
     }
     .result-label {
-        font-size: 0.85rem;
+        font-size: 0.78rem;
         color: #607d8b;
         text-transform: uppercase;
         letter-spacing: 0.08em;
         font-weight: 600;
         margin-bottom: 0.5rem;
     }
-
-    /* ── Success / info / warning / error messages ── */
-    .stAlert {
-        border-radius: 12px !important;
-        border: none !important;
-    }
-    [data-testid="stNotificationContentSuccess"] {
-        background: rgba(67,233,123,0.1) !important;
-        border-left: 4px solid #43e97b !important;
-        color: #a8e6c1 !important;
-    }
-    [data-testid="stNotificationContentError"] {
-        background: rgba(255,82,82,0.1) !important;
-        border-left: 4px solid #ff5252 !important;
-    }
-    [data-testid="stNotificationContentInfo"] {
-        background: rgba(56,189,248,0.1) !important;
-        border-left: 4px solid #38bdf8 !important;
-    }
-    [data-testid="stNotificationContentWarning"] {
-        background: rgba(250,204,21,0.1) !important;
-        border-left: 4px solid #facc15 !important;
+    .result-tag {
+        display: inline-block;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 20px;
+        padding: 0.3rem 1rem;
+        font-size: 0.82rem;
+        font-weight: 600;
+        margin-top: 0.8rem;
     }
 
-    /* ── DataFrame / table ── */
-    [data-testid="stDataFrame"] {
-        border-radius: 12px !important;
-        overflow: hidden;
-    }
-    .stDataFrame table {
-        background: rgba(255,255,255,0.03) !important;
-        color: #c9d8e4 !important;
-    }
+    /* ── Alerts ── */
+    .stAlert { border-radius: 12px !important; border: none !important; }
+
+    /* ── DataFrame ── */
+    [data-testid="stDataFrame"] { border-radius: 12px !important; overflow: hidden; }
     .stDataFrame th {
         background: rgba(255,255,255,0.07) !important;
         color: #a8c5da !important;
@@ -323,9 +269,7 @@ st.markdown(
         letter-spacing: 0.05em;
         border-bottom: 1px solid rgba(255,255,255,0.1) !important;
     }
-    .stDataFrame td {
-        border-bottom: 1px solid rgba(255,255,255,0.05) !important;
-    }
+    .stDataFrame td { border-bottom: 1px solid rgba(255,255,255,0.05) !important; }
 
     /* ── Expander ── */
     .streamlit-expanderHeader {
@@ -349,76 +293,21 @@ st.markdown(
         margin: 1.5rem 0 !important;
     }
 
-    /* ── Sidebar divider ── */
-    [data-testid="stSidebar"] hr {
-        border-color: rgba(255,255,255,0.08) !important;
-    }
-
     /* ── Scrollbar ── */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); }
     ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.22); }
 
-    /* ── Step indicator ── */
-    .step-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        background: rgba(255,255,255,0.06);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 20px;
-        padding: 0.3rem 0.9rem;
-        font-size: 0.78rem;
-        font-weight: 600;
-        color: #8fa8bf;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        margin-bottom: 0.6rem;
-    }
-    .step-pill-active {
-        background: rgba(67,233,123,0.12);
-        border-color: rgba(67,233,123,0.3);
-        color: #43e97b;
-    }
-
-    /* ── KPI strip ── */
-    .kpi-strip {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    .kpi-item {
-        flex: 1;
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.09);
-        border-radius: 12px;
-        padding: 1rem 1.2rem;
-        text-align: center;
-    }
-    .kpi-value {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #43e97b;
-    }
-    .kpi-label {
-        font-size: 0.72rem;
-        color: #607d8b;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        font-weight: 500;
-        margin-top: 0.2rem;
-    }
-
     /* ── Footer ── */
     .app-footer {
         text-align: center;
         padding: 1.5rem 0 0.5rem 0;
-        color: #37474f;
-        font-size: 0.78rem;
+        color: #8fa8bf;
+        font-size: 0.82rem;
         letter-spacing: 0.04em;
+        font-weight: 500;
     }
-    .app-footer a { color: #546e7a; text-decoration: none; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -429,7 +318,7 @@ st.markdown(
 # PATHS
 # ============================================================
 
-APP_DIR = Path(__file__).resolve().parent
+APP_DIR   = Path(__file__).resolve().parent
 ASSETS_DIR = APP_DIR / "assets"
 
 MODEL_PATH = ASSETS_DIR / "final_model.joblib"
@@ -439,7 +328,6 @@ WEATHER_PATHS = [
     ASSETS_DIR / "weather_cleaned.csv",
     ASSETS_DIR / "weather.csv",
 ]
-
 PRICE_PATHS = [
     ASSETS_DIR / "cleaned_price.csv",
     ASSETS_DIR / "price_cleaned.csv",
@@ -465,12 +353,6 @@ REGIONS = [
 
 CROPS = ["barley", "maize", "sorghum", "wheat", "teff"]
 
-CROP_ICONS = {
-    "barley": "🌾", "maize": "🌽", "sorghum": "🌿",
-    "wheat": "🌾", "teff": "🌱",
-}
-
-# Features used by the trained model.
 MODEL_FEATURES = [
     "region", "crop_type", "survey_year", "planting_month",
     "altitude_m", "rainfall_mm_season", "farm_size_ha",
@@ -486,7 +368,7 @@ MODEL_FEATURES = [
 
 
 # ============================================================
-# LOAD MODEL
+# LOAD MODEL & REFERENCE DATA
 # ============================================================
 
 @st.cache_resource
@@ -498,10 +380,6 @@ def load_model():
         )
     return joblib.load(MODEL_PATH)
 
-
-# ============================================================
-# LOAD OPTIONAL REFERENCE TABLES
-# ============================================================
 
 @st.cache_data
 def load_reference_table(paths):
@@ -519,7 +397,7 @@ price_df   = load_reference_table(PRICE_PATHS)
 
 
 # ============================================================
-# HELPER FUNCTIONS
+# HELPERS
 # ============================================================
 
 def safe_divide(a, b):
@@ -532,43 +410,35 @@ def find_column(df, candidates):
     if df is None:
         return None
     normalized = {str(col).strip().lower(): col for col in df.columns}
-    for candidate in candidates:
-        key = candidate.strip().lower()
-        if key in normalized:
-            return normalized[key]
+    for c in candidates:
+        if c.strip().lower() in normalized:
+            return normalized[c.strip().lower()]
     return None
 
 
 def get_reference_price(region, crop, year):
     if price_df is None or price_df.empty:
         return None
-
     region_col = find_column(price_df, ["region"])
     crop_col   = find_column(price_df, ["crop_type", "crop"])
     year_col   = find_column(price_df, ["survey_year", "year"])
     price_col  = find_column(price_df, ["price_birr_per_quintal", "price", "price_birr"])
-
     if not all([region_col, crop_col, year_col, price_col]):
         return None
-
     data = price_df.copy()
     data["_year"] = pd.to_numeric(data[year_col], errors="coerce")
-
     match = data[
         (data[region_col].astype(str).str.lower() == region.lower())
         & (data[crop_col].astype(str).str.lower() == crop.lower())
         & (data["_year"] == int(year))
     ]
-
     if match.empty:
         match = data[
             (data[region_col].astype(str).str.lower() == region.lower())
             & (data[crop_col].astype(str).str.lower() == crop.lower())
         ]
-
     if match.empty:
         return None
-
     values = pd.to_numeric(match[price_col], errors="coerce").dropna()
     return float(values.median()) if not values.empty else None
 
@@ -576,40 +446,38 @@ def get_reference_price(region, crop, year):
 def validate_features(df):
     missing = [f for f in MODEL_FEATURES if f not in df.columns]
     if missing:
-        raise ValueError(
-            "Missing model features:\n"
-            + "\n".join(f"  • {x}" for x in missing)
-        )
+        raise ValueError("Missing model features:\n" + "\n".join(f"  · {x}" for x in missing))
 
 
-def yield_category(value):
+def yield_rating(value):
+    """Return a plain text rating label and hex color — no emoji."""
     if value < 0.5:
-        return "⚠️ Very Low", "#ff5252"
+        return "Very Low",  "#ff5252"
     elif value < 1.5:
-        return "🟡 Low", "#facc15"
+        return "Low",       "#facc15"
     elif value < 3.0:
-        return "🟢 Moderate", "#43e97b"
+        return "Moderate",  "#43e97b"
     elif value < 5.0:
-        return "🔵 Good", "#38bdf8"
+        return "Good",      "#38bdf8"
     else:
-        return "🌟 Excellent", "#a78bfa"
+        return "Excellent", "#a78bfa"
 
 
 # ============================================================
-# HERO BANNER
+# HERO BANNER  — single 🌾 as brand mark, nothing else
 # ============================================================
 
 st.markdown(
     """
     <div class="hero-banner">
-        <div class="hero-icon">🌾</div>
+        <div style="font-size:3.5rem;line-height:1;opacity:0.9">🌾</div>
         <div>
-            <div class="hero-badge">AI · Agricultural Intelligence</div>
+            <div class="hero-badge">Agricultural Intelligence · ML Prediction</div>
             <h1 class="hero-title">Ethiopian <span>Crop Yield</span> Predictor</h1>
             <p class="hero-subtitle">
-                Machine-learning powered forecasts using farm management,
-                soil quality, and seasonal weather data.
-                Enter your conditions to estimate yield in <strong style="color:#c9d8e4">tons per hectare</strong>.
+                Machine-learning forecasts from farm management, soil, and seasonal
+                weather data — estimated yield in
+                <strong style="color:#c9d8e4">tons per hectare</strong>.
             </p>
         </div>
     </div>
@@ -619,55 +487,41 @@ st.markdown(
 
 
 # ============================================================
-# SIDEBAR — CONTEXT SETTINGS
+# SIDEBAR
 # ============================================================
 
 with st.sidebar:
     st.markdown(
-        "<h2 style='color:#ffffff;font-size:1.1rem;font-weight:700;"
-        "letter-spacing:-0.01em;margin-bottom:0.2rem'>🌍 Context Settings</h2>",
-        unsafe_allow_html=True,
-    )
-    st.markdown(
+        "<h2 style='color:#ffffff;font-size:1.05rem;font-weight:700;"
+        "letter-spacing:-0.01em;margin-bottom:0.2rem'>Context Settings</h2>"
         "<p style='color:#607d8b;font-size:0.78rem;margin-top:0;"
-        "margin-bottom:1.4rem'>Location, crop, and season configuration</p>",
+        "margin-bottom:1.4rem'>Location, crop &amp; season</p>",
         unsafe_allow_html=True,
     )
 
     region = st.selectbox("Region", REGIONS, index=0)
-
-    crop_type = st.selectbox(
-        "Crop Type",
-        CROPS,
-        index=0,
-        format_func=lambda c: f"{CROP_ICONS.get(c, '🌱')}  {c.capitalize()}",
-    )
+    crop_type = st.selectbox("Crop Type", [c.capitalize() for c in CROPS], index=0)
+    crop_type = crop_type.lower()
 
     survey_year = st.number_input(
-        "Survey Year",
-        min_value=2000,
-        max_value=2100,
-        value=2024,
-        step=1,
+        "Survey Year", min_value=2000, max_value=2100, value=2024, step=1,
     )
-
-    planting_month = st.selectbox(
-        "Planting Month",
-        list(MONTH_MAP.keys()),
-        index=5,
-    )
+    planting_month = st.selectbox("Planting Month", list(MONTH_MAP.keys()), index=5)
 
     st.divider()
 
-    # Mini status panel
     planting_month_num = MONTH_MAP[planting_month]
+
+    # Compact selection summary — no icon soup
     st.markdown(
         f"""
         <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
-        border-radius:10px;padding:0.9rem 1rem;font-size:0.8rem;color:#8fa8bf;line-height:1.8">
-            📍 <b style="color:#c9d8e4">{region}</b><br>
-            {CROP_ICONS.get(crop_type,'🌱')} <b style="color:#c9d8e4">{crop_type.capitalize()}</b> &nbsp;·&nbsp; {planting_month} {survey_year}<br>
-            📅 Month <b style="color:#43e97b">#{planting_month_num}</b>
+        border-radius:10px;padding:0.9rem 1rem;font-size:0.82rem;color:#8fa8bf;line-height:2">
+            <span style="color:#607d8b;font-size:0.72rem;text-transform:uppercase;
+            letter-spacing:0.05em">Selected</span><br>
+            <b style="color:#c9d8e4">{region}</b><br>
+            <b style="color:#c9d8e4">{crop_type.capitalize()}</b>
+            &nbsp;·&nbsp; {planting_month} {int(survey_year)}
         </div>
         """,
         unsafe_allow_html=True,
@@ -675,37 +529,30 @@ with st.sidebar:
 
     st.divider()
     st.caption(
-        "ℹ️ Market price is shown as economic context only "
-        "and is not used by the prediction model to prevent target leakage."
+        "Market price is shown as economic context only. "
+        "It is not passed to the model to prevent target leakage."
     )
 
 
 # ============================================================
-# MAIN CONTENT — TWO COLUMNS
+# MAIN INPUTS — two columns
 # ============================================================
 
 col_left, col_right = st.columns([1, 1], gap="large")
 
 
-# ─────────────────────────────────────────────────────────────
-# LEFT — FARM CONDITIONS
-# ─────────────────────────────────────────────────────────────
+# ── Farm Conditions ──────────────────────────────────────────
 
 with col_left:
-    st.markdown(
-        "<div class='section-header'>"
-        "<span class='section-header-icon'>🚜</span> Farm Conditions"
-        "</div>",
-        unsafe_allow_html=True,
-    )
+    st.markdown("<div class='section-header'>Farm Conditions</div>", unsafe_allow_html=True)
 
     altitude_m = st.number_input(
         "Altitude (m)", min_value=0.0, max_value=5000.0, value=1500.0, step=10.0,
-        help="Elevation of the farm above sea level",
+        help="Elevation above sea level",
     )
     farm_size_ha = st.number_input(
         "Farm Size (ha)", min_value=0.01, max_value=1000.0, value=1.0, step=0.1,
-        help="Total cultivated area in hectares",
+        help="Total cultivated area",
     )
 
     c1, c2 = st.columns(2)
@@ -721,57 +568,50 @@ with col_left:
     c3, c4 = st.columns(2)
     with c3:
         improved_seed_used = st.selectbox(
-            "Improved Seed?",
+            "Improved Seed",
             options=[0, 1],
-            format_func=lambda x: "✅ Yes" if x == 1 else "❌ No",
+            format_func=lambda x: "Yes" if x == 1 else "No",
         )
     with c4:
         pest_disease_flag = st.selectbox(
-            "Pest / Disease?",
+            "Pest / Disease",
             options=[0, 1],
-            format_func=lambda x: "⚠️ Yes" if x == 1 else "✅ No",
+            format_func=lambda x: "Yes" if x == 1 else "No",
         )
 
     soil_quality_index = st.slider(
-        "Soil Quality Index",
-        min_value=0.0, max_value=1.0, value=0.5, step=0.01,
-        help="Composite index from 0 (poor) to 1 (excellent)",
+        "Soil Quality Index", min_value=0.0, max_value=1.0, value=0.5, step=0.01,
+        help="0 = poor · 1 = excellent",
     )
 
-    # Visual soil quality bar
     sq_pct = int(soil_quality_index * 100)
     sq_color = "#ff5252" if sq_pct < 30 else "#facc15" if sq_pct < 60 else "#43e97b"
+
+    # Slim progress bar beneath the slider — the only "visual" here
     st.markdown(
         f"""
-        <div style="display:flex;align-items:center;gap:0.7rem;margin:-0.5rem 0 0.8rem 0">
-            <div style="flex:1;height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden">
-                <div style="width:{sq_pct}%;height:100%;background:{sq_color};border-radius:3px;
-                transition:width 0.3s"></div>
+        <div style="display:flex;align-items:center;gap:0.7rem;margin:-0.4rem 0 0.9rem 0">
+            <div style="flex:1;height:5px;background:rgba(255,255,255,0.08);
+            border-radius:3px;overflow:hidden">
+                <div style="width:{sq_pct}%;height:100%;background:{sq_color};
+                border-radius:3px"></div>
             </div>
-            <span style="font-size:0.8rem;color:{sq_color};font-weight:600;min-width:2.5rem">{sq_pct}%</span>
+            <span style="font-size:0.78rem;color:{sq_color};font-weight:600;
+            min-width:2.5rem">{sq_pct}%</span>
         </div>
         """,
         unsafe_allow_html=True,
     )
 
     distance_to_market_km = st.number_input(
-        "Distance to Market (km)",
-        min_value=0.0, max_value=500.0, value=10.0, step=0.5,
-        help="Nearest market distance in kilometres",
+        "Distance to Market (km)", min_value=0.0, max_value=500.0, value=10.0, step=0.5,
     )
 
 
-# ─────────────────────────────────────────────────────────────
-# RIGHT — SEASONAL WEATHER
-# ─────────────────────────────────────────────────────────────
+# ── Seasonal Weather ─────────────────────────────────────────
 
 with col_right:
-    st.markdown(
-        "<div class='section-header'>"
-        "<span class='section-header-icon'>🌦️</span> Seasonal Weather"
-        "</div>",
-        unsafe_allow_html=True,
-    )
+    st.markdown("<div class='section-header'>Seasonal Weather</div>", unsafe_allow_html=True)
 
     r1, r2 = st.columns(2)
     with r1:
@@ -804,9 +644,7 @@ with col_right:
         )
 
     st.markdown(
-        "<div class='section-header' style='margin-top:1rem'>"
-        "<span class='section-header-icon'>📅</span> Weather Data Coverage"
-        "</div>",
+        "<div class='section-header' style='margin-top:1.2rem'>Weather Data Coverage</div>",
         unsafe_allow_html=True,
     )
 
@@ -820,11 +658,8 @@ with col_right:
             "Available Months", min_value=0, max_value=12, value=4, step=1,
         )
 
-    weather_months_missing = max(
-        int(weather_months_expected) - int(weather_months_available), 0
-    )
+    weather_months_missing = max(int(weather_months_expected) - int(weather_months_available), 0)
 
-    # Coverage progress bar
     coverage_pct = (
         int(weather_months_available) / int(weather_months_expected) * 100
         if weather_months_expected > 0 else 0
@@ -836,20 +671,22 @@ with col_right:
         f"""
         <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);
         border-radius:10px;padding:0.9rem 1rem;margin-top:0.4rem">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
-                <span style="font-size:0.78rem;color:#8fa8bf;text-transform:uppercase;
-                letter-spacing:0.05em;font-weight:600">Data Coverage</span>
-                <span style="font-size:0.85rem;font-weight:700;color:{cov_color}">{cov_label}</span>
+            <div style="display:flex;justify-content:space-between;
+            align-items:center;margin-bottom:0.6rem">
+                <span style="font-size:0.72rem;color:#8fa8bf;text-transform:uppercase;
+                letter-spacing:0.05em;font-weight:600">Coverage</span>
+                <span style="font-size:0.82rem;font-weight:700;color:{cov_color}">{cov_label}</span>
             </div>
-            <div style="height:8px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden">
-                <div style="width:{min(coverage_pct,100):.0f}%;height:100%;background:{cov_color};
-                border-radius:4px;transition:width 0.4s"></div>
+            <div style="height:6px;background:rgba(255,255,255,0.08);
+            border-radius:3px;overflow:hidden">
+                <div style="width:{min(coverage_pct,100):.0f}%;height:100%;
+                background:{cov_color};border-radius:3px"></div>
             </div>
-            <div style="display:flex;justify-content:space-between;margin-top:0.4rem">
-                <span style="font-size:0.75rem;color:#607d8b">
+            <div style="display:flex;justify-content:space-between;margin-top:0.5rem">
+                <span style="font-size:0.74rem;color:#607d8b">
                     {int(weather_months_available)} of {int(weather_months_expected)} months
                 </span>
-                <span style="font-size:0.75rem;color:#607d8b">
+                <span style="font-size:0.74rem;color:#607d8b">
                     {int(weather_months_missing)} missing
                 </span>
             </div>
@@ -860,7 +697,7 @@ with col_right:
 
 
 # ============================================================
-# DERIVED / ENGINEERED FEATURES
+# ENGINEERED FEATURES
 # ============================================================
 
 fertilizer_improved_seed_interaction = fertilizer_kg_per_ha * improved_seed_used
@@ -871,19 +708,19 @@ rainfall_per_fertilizer = safe_divide(rainfall_mm_season, fertilizer_kg_per_ha)
 # PREDICT BUTTON
 # ============================================================
 
-st.markdown("<div style='margin: 2rem 0 0.5rem 0'></div>", unsafe_allow_html=True)
+st.markdown("<div style='margin:2rem 0 0.5rem 0'></div>", unsafe_allow_html=True)
 
-predict_col, _ = st.columns([1, 2])
-with predict_col:
+btn_col, _ = st.columns([1, 2])
+with btn_col:
     predict_button = st.button(
-        "⚡  Run Yield Prediction",
+        "Run Yield Prediction",
         type="primary",
         use_container_width=True,
     )
 
 
 # ============================================================
-# PREDICTION RESULTS
+# RESULTS
 # ============================================================
 
 if predict_button:
@@ -922,51 +759,47 @@ if predict_button:
         input_df = input_df[MODEL_FEATURES]
 
         prediction = model.predict(input_df)
-        predicted_yield = float(np.asarray(prediction).ravel()[0])
+        predicted_yield         = float(np.asarray(prediction).ravel()[0])
         predicted_yield_display = max(predicted_yield, 0.0)
-        estimated_total = predicted_yield_display * farm_size_ha
+        estimated_total         = predicted_yield_display * farm_size_ha
 
-        category_label, category_color = yield_category(predicted_yield_display)
+        rating_label, rating_color = yield_rating(predicted_yield_display)
         reference_price = get_reference_price(region, crop_type, survey_year)
 
-        # ── Hero result card ──────────────────────────────────
+        # ── Large result card ─────────────────────────────────
         st.markdown(
             f"""
             <div class="result-card">
                 <div class="result-label">Predicted Crop Yield</div>
                 <div class="result-yield">{predicted_yield_display:.2f}</div>
                 <div class="result-unit">tons per hectare</div>
-                <div style="margin-top:0.8rem">
-                    <span style="display:inline-block;background:rgba(255,255,255,0.06);
-                    border:1px solid rgba(255,255,255,0.1);border-radius:20px;
-                    padding:0.3rem 1rem;font-size:0.82rem;font-weight:600;
-                    color:{category_color}">{category_label}</span>
-                </div>
+                <div class="result-tag" style="color:{rating_color};
+                border-color:rgba(255,255,255,0.12)">{rating_label}</div>
             </div>
             """,
             unsafe_allow_html=True,
         )
 
-        # ── KPI metrics row ───────────────────────────────────
+        # ── Three KPI cards ───────────────────────────────────
         m1, m2, m3 = st.columns(3)
+
         with m1:
-            st.metric("🌾 Yield / ha", f"{predicted_yield_display:.2f} t/ha")
+            st.metric("Yield / ha", f"{predicted_yield_display:.2f} t/ha")
         with m2:
-            st.metric("🏡 Farm Production", f"{estimated_total:.2f} tons")
+            st.metric("Farm Production", f"{estimated_total:.2f} tons")
         with m3:
             if reference_price is not None:
-                st.metric("💰 Market Price", f"{reference_price:,.0f} Birr/q")
-                if reference_price:
-                    gross = estimated_total * (reference_price / 10)  # 1 ton = 10 quintals
-                    st.caption(f"Gross revenue est. ≈ {gross:,.0f} Birr")
+                st.metric("Market Price", f"{reference_price:,.0f} Birr/quintal")
+                gross = estimated_total * (reference_price / 10)
+                st.caption(f"Gross revenue est. ≈ {gross:,.0f} Birr")
             else:
-                st.metric("💰 Market Price", "N/A")
+                st.metric("Market Price", "N/A")
                 st.caption("No price data for this selection")
 
-        # ── Input summary table ───────────────────────────────
+        # ── Input summary ─────────────────────────────────────
         st.markdown("<div style='margin-top:1.5rem'></div>", unsafe_allow_html=True)
 
-        with st.expander("📋 Full Input Summary", expanded=False):
+        with st.expander("Input Summary", expanded=False):
             summary_df = pd.DataFrame(
                 {
                     "Parameter": [
@@ -978,16 +811,16 @@ if predict_button:
                     ],
                     "Value": [
                         region,
-                        f"{CROP_ICONS.get(crop_type,'')} {crop_type.capitalize()}",
+                        crop_type.capitalize(),
                         int(survey_year),
                         planting_month,
                         f"{farm_size_ha:.2f} ha",
                         f"{altitude_m:.0f} m",
                         f"{rainfall_mm_season:.1f} mm",
                         f"{fertilizer_kg_per_ha:.1f} kg/ha",
-                        "✅ Yes" if improved_seed_used else "❌ No",
-                        "⚠️ Yes" if pest_disease_flag else "✅ No",
-                        f"{soil_quality_index:.2f} ({sq_pct}%)",
+                        "Yes" if improved_seed_used else "No",
+                        "Yes" if pest_disease_flag else "No",
+                        f"{soil_quality_index:.2f}",
                         f"{labor_days_per_ha:.0f} days",
                         f"{distance_to_market_km:.1f} km",
                         f"{season_mean_temp_c:.1f} °C",
@@ -997,8 +830,7 @@ if predict_button:
             )
             st.dataframe(summary_df, use_container_width=True, hide_index=True)
 
-        # ── Model note ────────────────────────────────────────
-        with st.expander("ℹ️ About this Prediction", expanded=False):
+        with st.expander("About this Prediction", expanded=False):
             st.markdown(
                 """
                 **Target:** `yield_tons_per_ha`
@@ -1006,12 +838,10 @@ if predict_button:
                 The model uses historical agricultural, farm-management,
                 and weather-related features.
 
-                **Intentionally excluded** from model inputs to prevent leakage:
-                - `plot_id`
-                - `price_birr_per_quintal`
-                - `yield_tons_per_ha` (the prediction target)
+                **Excluded from model inputs** to prevent target leakage:
+                `plot_id`, `price_birr_per_quintal`, `yield_tons_per_ha`
 
-                Market price displayed above is reference information only.
+                Market price shown above is reference information only.
                 """
             )
 
@@ -1025,24 +855,25 @@ if predict_button:
 
 
 # ============================================================
-# BUNDLED DATASET INFO
+# DATASET INFO
 # ============================================================
 
 st.markdown("<div style='margin-top:1rem'></div>", unsafe_allow_html=True)
 
-with st.expander("📁 Bundled Dataset Information", expanded=False):
+with st.expander("Dataset Information", expanded=False):
     d1, d2 = st.columns(2)
 
     with d1:
         st.markdown(
-            "<p style='color:#a8c5da;font-weight:600;font-size:0.85rem;"
-            "text-transform:uppercase;letter-spacing:0.05em'>🌤 Weather Reference</p>",
+            "<p style='color:#a8c5da;font-weight:600;font-size:0.82rem;"
+            "text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.4rem'>"
+            "Weather Reference</p>",
             unsafe_allow_html=True,
         )
         if weather_df is not None:
             st.markdown(
                 f"<p style='color:#8fa8bf;font-size:0.9rem'>"
-                f"<b style='color:#43e97b'>{len(weather_df):,}</b> rows · "
+                f"<b style='color:#43e97b'>{len(weather_df):,}</b> rows &nbsp;·&nbsp; "
                 f"<b style='color:#43e97b'>{len(weather_df.columns)}</b> columns</p>",
                 unsafe_allow_html=True,
             )
@@ -1051,14 +882,15 @@ with st.expander("📁 Bundled Dataset Information", expanded=False):
 
     with d2:
         st.markdown(
-            "<p style='color:#a8c5da;font-weight:600;font-size:0.85rem;"
-            "text-transform:uppercase;letter-spacing:0.05em'>💰 Price Reference</p>",
+            "<p style='color:#a8c5da;font-weight:600;font-size:0.82rem;"
+            "text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.4rem'>"
+            "Price Reference</p>",
             unsafe_allow_html=True,
         )
         if price_df is not None:
             st.markdown(
                 f"<p style='color:#8fa8bf;font-size:0.9rem'>"
-                f"<b style='color:#43e97b'>{len(price_df):,}</b> rows · "
+                f"<b style='color:#43e97b'>{len(price_df):,}</b> rows &nbsp;·&nbsp; "
                 f"<b style='color:#43e97b'>{len(price_df.columns)}</b> columns</p>",
                 unsafe_allow_html=True,
             )
@@ -1074,9 +906,9 @@ st.divider()
 st.markdown(
     """
     <div class="app-footer">
-        🌾 &nbsp; Ethiopian Agricultural Yield Predictor &nbsp;·&nbsp;
-        AI &amp; Data Engineering Hackathon &nbsp;·&nbsp;
-        Built with Streamlit
+        Ethiopian Agricultural Yield Predictor
+        &nbsp;·&nbsp; AI &amp; Data Engineering Hackathon
+        &nbsp;·&nbsp; Built with Streamlit
     </div>
     """,
     unsafe_allow_html=True,
